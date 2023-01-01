@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
+    <title>Ana Sayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+</head>
+<body>
+    <nav class="navbar bg-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand"></a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Ara</button>
+          </form>
+        </div>
+    </nav>
+    <table >
+      <tr >
+        <td style="width:20%"></td>
+        <td>
+      {% for n in my_list%}
+          {%if n["model"]== x %}
+          {% set image=n["image"] %}
+          <img src="{{image}}" style=" width: 500px;
+          height: 600px; ">
+          {% endif %}
+      {% endfor%}
+      </td>
+      <td style="width:60%; text-align: left;" >
+        {% for n in my_list%}
+        {%if n["model"]== x %}
+        <h4>{{n["tamAdi"]}}</h4>
+        <br>
+        <div style="font-size: 20px">{{n["puan"]}}
+        <img src="https://cdn.cimri.io/web-images/star.svg" style="width: 20px;
+        height: 20px">
+        </div>
+        {% endif %}
+        {% endfor%}
+        <br><br>
+        <table>
+          <tr>
+            {% for n in my_list1%}
+            {%if n["model"]== x %}
+            {% set link=n["link"] %}
+            <td>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <img src="https://cdn.akakce.com/im/m6/11070.svg">
+            </td>
+            <td style="font-size: 30px;">
+              &nbsp;&nbsp;&nbsp;&nbsp;{{n["fiyat"]}} TL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </td>
+            <td>
+              
+              <form action="{{link}}">
+                <button type="submit" class="btn btn-outline-success" style="
+                 width: 150px;
+                height: 40px">Saticiya Git</button>
+                </form>
+            </td>
+            {% endif %}
+            {% endfor%}
+          </tr>
+          
+        </table>
+      </td>
+      <td style="width: 20%"></td>
+      </tr>
+      <br><br>
+    </table>
+
+      {% for n in my_list%}
+            {%if n["model"]== x %}
+            <table>
+              <td style="width: 43%;"></td>
+              <td>
+              <table>
+              <tr>
+                
+                <td>Marka :</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["marka"]}}</td>
+              </tr>
+              <tr>
+                
+                <td>Model :</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["model"]}}</td>
+              </tr>
+              <tr>
+                
+                <td>Disk Turu :</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["diskTuru"]}}</td>
+              </tr>
+              <tr>
+                
+                <td>Disk Kapasitesi :</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["diskKapasitesi"]}}</td>
+              </tr>
+              <tr>
+                  
+                <td>Puan :</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["puan"]}}</td>
+              </tr>
+              </table>
+              </td>
+              <td style="width: 10%;"></td>
+              <td>
+              <table>
+              <tr>
+                  
+                  <td>Bellek Turu :</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["bellekTuru"]}}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Bellek Kapasitesi :</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["bellekKapasitesi"]}}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Isletim Sistemi :</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["isletimSistemi"]}}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Islemci Modeli :</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["islemciModeli"]}}</td>
+                </tr>
+                <tr>
+                  
+                  <td>Ekran Boyutu :</td>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{n["ekranBoyutu"]}}</td>
+                </tr>
+                
+              </table> 
+              </td>
+            </table>
+            {% endif %}
+            {% endfor%}
+<br>
+<br><br>
+</body>
